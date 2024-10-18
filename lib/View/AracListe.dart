@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AracEkle extends StatelessWidget{
+import 'Kargo_Liste.dart';
+
+class AracListe extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +12,10 @@ class AracEkle extends StatelessWidget{
       ),
       body: Row(
         children:[
-          Text("dsadsa"),
+          ElevatedButton(onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => KargoListe()),
+          ), child: Text("Kargo Ekle")),
           Text("dsadsa"),
         ]
       ),

@@ -1,4 +1,5 @@
-import 'package:deneme/View/Arac_Ekle.dart';
+import 'package:deneme/View/AracListe.dart';
+import 'package:deneme/View/Kargo_Liste.dart';
 import 'package:flutter/material.dart';
 
 class AracSayfa extends StatelessWidget {
@@ -21,7 +22,7 @@ class AracSayfa extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AracEkle()),
+                      MaterialPageRoute(builder: (context) => AracListe()),
                     );
                     // Action for Button 1
                     print('Button 1 Pressed');
@@ -54,7 +55,7 @@ class AracSayfa extends StatelessWidget {
                     child: Card(
                       elevation: 4,
                       child: Center(
-                        child: Kargo(items[index]),
+                        child: Arac(items[index]),
                       ),
                     ),
                   );
@@ -67,10 +68,22 @@ class AracSayfa extends StatelessWidget {
       ),
     );
   }
-  Widget Kargo(data){
+  Widget Arac(data){
     return Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Text(data, style: TextStyle(fontSize: 18))
+        child: Row(
+          children: [
+            Text(data, style: TextStyle(fontSize: 18)),
+            Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(onPressed: () => (print("dsa")), child: Text("Görüntüle")),
+                    ElevatedButton(onPressed: () => (print("dsa")), child: Text("Sil"))
+                  ],
+            ))
+          ],
+        ),
     );
   }
 }
