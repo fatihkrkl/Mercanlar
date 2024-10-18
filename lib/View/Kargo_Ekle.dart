@@ -1,3 +1,4 @@
+import 'package:deneme/View/Barkod_Sayfa.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -84,7 +85,10 @@ class Combo_Bir_State extends State<KargoEkle> {
                       child: TextField(
                     decoration: InputDecoration(hintText: "Barkod"),
                   )),
-                  Expanded(child: IconButton(onPressed: ()=> (print("barcode")), icon: Icon(Icons.barcode_reader)))
+                  Expanded(child: IconButton(onPressed: ()=> Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BarkodSayfa()),
+                  ), icon: Icon(Icons.barcode_reader)))
                 ],
               )),
               Expanded(
