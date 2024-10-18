@@ -1,5 +1,4 @@
-import 'package:deneme/View/AracListe.dart';
-import 'package:deneme/View/Kargo_Liste.dart';
+import 'package:deneme/View/Barkod_Sayfa.dart';
 import 'package:flutter/material.dart';
 
 class AracSayfa extends StatelessWidget {
@@ -22,7 +21,7 @@ class AracSayfa extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AracListe()),
+                      MaterialPageRoute(builder: (context) => AracEkle()),
                     );
                     // Action for Button 1
                     print('Button 1 Pressed');
