@@ -1,5 +1,6 @@
+import 'package:deneme/View/Kargo_Bilgi.dart';
 import 'package:flutter/material.dart';
-
+import 'package:deneme/View/Kargo_Ekle.dart';
 class KargoSayfa extends StatelessWidget{
   final List<String> items = List.generate(20, (index) => 'Item ${index + 1}');
   @override
@@ -7,6 +8,17 @@ class KargoSayfa extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         title: Text('Araç Sayfası'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => KargoEkle()),
+          );
+          // Action to be performed on button press
+        },
+        child: Icon(Icons.add), // Plus icon
+        tooltip: 'Add',
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -16,7 +28,7 @@ class KargoSayfa extends StatelessWidget{
             itemBuilder: (context, index) {
               return SizedBox(
                 height: 100,
-                child: Kargo(items[index]),
+                child: Kargo(items[index],context),
               );
             },
           )
@@ -25,7 +37,7 @@ class KargoSayfa extends StatelessWidget{
       ),
     );
   }
-  Widget Kargo(data){
+  Widget Kargo(data,context){
     return TextButton(
         style: TextButton.styleFrom(
           padding: EdgeInsets.symmetric(vertical: 20),
@@ -37,7 +49,10 @@ class KargoSayfa extends StatelessWidget{
             ),
           ),
         ),
-        onPressed: () =>(),
+        onPressed: () =>Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => KargoBilgi()),
+        ),
         child: Row(
           children: [
             Expanded(child: Text("Tip")),

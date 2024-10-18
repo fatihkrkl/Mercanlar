@@ -1,9 +1,7 @@
-import 'package:deneme/View/Arac_Sayfa.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-class AracEkle extends StatelessWidget{
+class KargoBilgi extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,10 +10,7 @@ class AracEkle extends StatelessWidget{
       ),
       body: Row(
           children:[
-            ElevatedButton(onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => AracSayfa()),
-            ), child: Text("Araç Ekle")),
+            Text("dsadsa"),
             Text("dsadsa"),
           ]
       ),

@@ -1,5 +1,7 @@
-import 'package:deneme/View/Barkod_Sayfa.dart';
+import 'package:deneme/View/Kargo_Sayfa.dart';
 import 'package:flutter/material.dart';
+
+import 'Arac_Ekle.dart';
 
 class AracSayfa extends StatelessWidget {
   final List<String> items = List.generate(20, (index) => 'Item ${index + 1}');
@@ -54,7 +56,7 @@ class AracSayfa extends StatelessWidget {
                     child: Card(
                       elevation: 4,
                       child: Center(
-                        child: Arac(items[index]),
+                        child: Arac(items[index],context),
                       ),
                     ),
                   );
@@ -67,7 +69,7 @@ class AracSayfa extends StatelessWidget {
       ),
     );
   }
-  Widget Arac(data){
+  Widget Arac(data,context){
     return Padding(
         padding: const EdgeInsets.all(16.0),
         child: Row(
@@ -77,7 +79,10 @@ class AracSayfa extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ElevatedButton(onPressed: () => (print("dsa")), child: Text("Görüntüle")),
+                    ElevatedButton(onPressed: () => (Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => KargoSayfa()),
+                    )), child: Text("Görüntüle")),
                     ElevatedButton(onPressed: () => (print("dsa")), child: Text("Sil"))
                   ],
             ))
